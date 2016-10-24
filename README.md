@@ -1,10 +1,15 @@
 # Marketch
 
+Forked from [marketch](https://github.com/tudou527/marketch/) which looks like inactive now.
 Marketch is a Sketch 3 plug-in for automatically generating html page that can measure and get CSS styles on it.
 
 ![Banner](https://raw.githubusercontent.com/angusjune/marketch/master/logo.png)
 
 ## Change Log 
+
+#### `v1.0.22`
+* [add] add a switch to turn off copy automatically.
+* [fixed] set overflow auto for the right panel to support auto scrolling.
 
 #### `v1.0.21`
 * [update] symbol export available
