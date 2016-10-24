@@ -1,9 +1,9 @@
 {
-  "name": "marketch",
-  "version": "1.0.21",
+  "name": "marketch-fixed",
+  "version": "1.0.22",
   "description": "",
-  "author": "tudou527",
-  "authorEmail": "tudou527@gmail.com",
+  "author": "tudou527 yuekec",
+  "authorEmail": "tudou527@gmail.com, yuekec@gmail.com",
   "commands": [
     {
       "script": "zip.cocoascript",
@@ -25,7 +25,7 @@
       "export",
       "checkupdate"
     ],
-    "title" : "marketch"
+    "title" : "marketch-fixed"
   },
-  "identifier": "com.marketch.cosa.98908c77-3d38-48fa-8c7c-1bb465f67eb8",
+  "identifier": "com.marketch-fixed.cosa.98908c77-3d38-48fa-8c7c-1bb465f67eb8",
 }

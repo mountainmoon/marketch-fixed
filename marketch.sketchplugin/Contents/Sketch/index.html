@@ -156,6 +156,10 @@ input[type=text], textarea {outline:0;padding:3px;}
       .pa-block dd {}
         .pa-block textarea {padding:10px;border-radius:3px;width:180px;height:19px;border:0;color:#b3b8bd;background:#434950;resize:none;overflow-y:scroll;font-size:11px;font-family:monospace,Consolas;}
 
+    #copyonclick {
+      vertical-align: initial;
+    }
+
     /* 填充 */
     .pa-fill {}
       .pa-fill dt {width:auto;}
@@ -849,14 +853,17 @@ Marketch.prototype = {
       var name = '';
 
       if(e.target.nodeName.toLowerCase() == 'textarea'){
-        name = el.attr('name');
-        el.select();
-        document.execCommand('copy');
-        //复制成功的提示
-        el.parents('dl').addClass('copy-success');
-        timer[name] = setTimeout(function(){
-          el.parents('dl').removeClass('copy-success');
-        }, 1000);
+        var switcher = document.getElementById('copyonclick');
+        if (switcher && switcher.checked) {
+          name = el.attr('name');
+          el.select();
+          document.execCommand('copy');
+          //复制成功的提示
+          el.parents('dl').addClass('copy-success');
+          timer[name] = setTimeout(function(){
+            el.parents('dl').removeClass('copy-success');
+          }, 1000);
+        }
       }
 
       if(el.parents('.pa-symbol').size() > 0){
@@ -929,6 +936,9 @@ Marketch.prototype = {
             '<li><input value="', this.getScale(layerData.height) ,'" readonly><label>', this.I18N['HEIGHT'] ,'</label></li>',
           '</ul>',
         '</dd>',
+      '</dl>',
+      '<dl class="pa-block">',
+        '<dt><label><input type="checkbox" checked id="copyonclick"/>&nbsp;', this.I18N['COPYONCLICK'] ,'</label></dt>',
       '</dl>'
     );
 
