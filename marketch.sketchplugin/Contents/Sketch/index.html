@@ -263,6 +263,7 @@ var Marketch = function(obj){
   this.I18N = obj.sketchData.I18N;
   //Symbols
   this.symbols = {};
+  this.autoCopyEnabled = true;
   //创建dom(替换I18N)
   this.setup();
 };
@@ -852,9 +853,12 @@ Marketch.prototype = {
       var el = $(e.target);
       var name = '';
 
+      if (e.target.id == 'copyonclick') {
+        self.autoCopyEnabled = e.target.checked
+      }
+
       if(e.target.nodeName.toLowerCase() == 'textarea'){
-        var switcher = document.getElementById('copyonclick');
-        if (switcher && switcher.checked) {
+        if (self.autoCopyEnabled) {
           name = el.attr('name');
           el.select();
           document.execCommand('copy');
@@ -938,7 +942,7 @@ Marketch.prototype = {
         '</dd>',
       '</dl>',
       '<dl class="pa-block">',
-        '<dt><label><input type="checkbox" checked id="copyonclick"/>&nbsp;', this.I18N['COPYONCLICK'] ,'</label></dt>',
+        '<dt><label><input type="checkbox"' + (this.autoCopyEnabled ? " checked" : '') + ' id="copyonclick"/>&nbsp;', this.I18N['COPYONCLICK'] ,'</label></dt>',
       '</dl>'
     );
 
