@@ -13,7 +13,7 @@ function onRun(context){
   //插件当前版本号
   var currentVersion = null;
   //插件当前版本号
-  var response = util.getJSON('https://raw.githubusercontent.com/tudou527/marketch/master/package.json');
+  var response = util.getJSON('https://raw.githubusercontent.com/mountainmoon/marketch-fixed/master/package.json');
   //服务端新版本号
   var remoteVersion = null;
 

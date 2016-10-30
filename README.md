@@ -7,6 +7,9 @@ Marketch is a Sketch 3 plug-in for automatically generating html page that can m
 
 ## Change Log 
 
+#### `v1.0.23`
+* [update] add a usefull button to toggle panel.
+
 #### `v1.0.22`
 * [add] add a switch to turn off copy automatically.
 * [fixed] set overflow auto for the right panel to support auto scrolling.
